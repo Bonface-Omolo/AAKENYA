@@ -1,0 +1,42 @@
+{% include "adminheader.html" %}
+<br>
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h4 class="text-center">Customer Account Information</h4>
+            {{ msg }}
+        </div>
+        <div class="card-body">
+            <table class="table table-stripped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id Number</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">email</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for row in result %}
+                    <tr>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }} {{ row[3] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td><a href="/update-customer?id={{ row[0] }}" class="btn btn-info">Update</a>
+                            <a href="/delete-customer?id={{ row[0] }}" class="btn btn-danger">Delete</a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+</div><!-- the container ends here -->
+<br>
+{% include "footer.html" %}

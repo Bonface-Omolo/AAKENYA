@@ -1,0 +1,24 @@
+{% include "adminheader.html" %}
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5>Update the form below</h5>
+            <h5 class="text-success">{{ msg }}</h5>
+        </div>
+        <div class="card-body">
+            <form action="/perform-management" method="POST">
+                {% for row in result %}
+                <input type="text" name="idnumber" value="{{ row[1] }}" class="form-control" ><br>
+                <input type="text" name="fname"  value="{{ row[2] }}" class="form-control" ><br>
+                <input type="text" name="lname"  value="{{ row[3] }}" class="form-control" ><br>
+                <input type="email" name="email" value="{{ row[4] }}" class="form-control" ><br>
+                <input type="hidden" name="id" value="{{ row[0] }}"/>
+                <input type="submit" value="Update management"><br><br>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</div><!-- the container ends here -->
+<br>
+{% include "footer.html" %}

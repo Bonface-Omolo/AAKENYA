@@ -1,0 +1,62 @@
+{% include "home_header.html" %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="text-center" >Application for Opportunity</h5>
+                </div>
+                <div class="card-body">
+                    <p style="color:red">{{ msg }}</p>
+                    <form action="/add-services" method="POST">
+                        <lable> Identification Number </lable>
+                        <input type="number" name="id" placeholder="Type your  id number" class="form-control"><br>
+                        <lable>Opportunities</lable>
+                        <select name="opportunity" class="form-control">
+                            <option>Network Security</option>
+                            <option>Software Development</option>
+                             <option>Databases Management</option>
+                            <option>Cyber Security</option>
+                        </select><br>
+                        <lable> Amount </lable>
+                        <select name="amount" class="form-control">
+                            <option>20000</option>
+                            <option>25000</option>
+                             <option>30000</option>
+                            <option>35000</option>
+                        </select><br>
+                         <lable> Stage </lable>
+                        <select name="stage" class="form-control">
+                            <option>Discovery</option>
+                            <option>Proposal</option>
+                             <option>Shared</option>
+                            <option>Negotiations</option>
+                        </select><br>
+
+                        <input type="submit" value="Submit" class="btn btn-primary" >
+
+                    </form>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-2">
+
+        </div>
+<!--        <div class="col-md-6">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    <h3>Alternatively</h3>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <p>Already Registered, <a href="/login">Login </a> instead</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>
+<br>
+{% include "footer.html" %}

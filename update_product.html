@@ -1,0 +1,41 @@
+{% include "home_header.html" %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>This page is only for logged in users</h1>
+        <a href="/home">HOME</a> --
+        <a href="/user-profile">PROFILE</a> --
+        <a href="/view-products">VIEW PRODUCTS</a>
+
+    </div>
+</div>
+
+<div class="container">
+    <h3>Admin Dashboard</h3>
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Update the form below</h5>
+            <h5 class="text-success">{{ msg }}</h5>
+        </div>
+        <div class="card-body">
+            <form action="/perform-update" method="POST" enctype="multipart/form-data">
+                {% for row in result %}
+                <input type="text" name="title" placeholder="Name of the product" value="{{ row[1] }}"><br><br>
+                <img src="../static/img/{{ row[4] }}" alt="product image" class="img-fluid"><br>
+                <input type="file" name="my_image"><br><br>
+                <input type="number" name="price" placeholder="Price" value="{{ row[2] }}"><br><br>
+                <textarea name="description" id="" cols="30" rows="10">{{ row[3] }} </textarea><br><br>
+                <input type="hidden" name="prod_id" value="{{ row[0] }}"/>
+                <input type="hidden" name="prev_image" value="{{ row[4] }}"/>
+                <input type="submit" value="Update Product"><br><br>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+
+
+
+</div><!-- the container ends here -->
+
+{% include "footer.html" %}

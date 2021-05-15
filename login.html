@@ -1,0 +1,31 @@
+{% include "header.html" %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6 pd-5" >
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="text-center">Enter your credentials to login below</h5>
+                    <h4 class="text-success">{{ msg }}</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/login-user" method="POST">
+                        <input type="email" name="email" placeholder="Your Email Address" class="form-control"><br>
+                        <input type="password" name="password" placeholder="Password" class="form-control"><br>
+                        <input type="submit" value="Login" class="btn btn-primary" >
+                         <p>If you don't have account, please create <a href="/register">Create Account </a> </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+
+    </div>
+</div>
+<br><br>
+{% include "footer.html" %}

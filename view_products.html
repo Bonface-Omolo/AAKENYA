@@ -1,0 +1,41 @@
+{% include "home_header.html" %}
+<br>
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h4 class="text-center">All Services are displayed below</h4>
+            {{ msg }}
+        </div>
+        <div class="card-body">
+            <table class="table table-stripped">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Opportunity</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Stage</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for row in result %}
+                    <tr>
+
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td> <a href="/services"class="btn btn-success" >Apply</a> </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+</div><!-- the container ends here -->
+<br>
+{% include "footer.html" %}

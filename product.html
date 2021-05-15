@@ -1,0 +1,27 @@
+{%include "header.html"%}
+
+<div CLASS="jumbotron">
+    <div class="container">
+        <h1> products</h1>
+    </div>
+</div>
+<div class="container pd-5">
+<!--   the card below will be our product template-->
+    <div class="row">
+        {% for row in result %}
+        <div class="col-md-3">
+            <div class="card">
+                <img src="static/img/dev1.jpeg" alt="">
+                <div class="card-body">
+                    <h5>{{ row[1] }}</h5>
+                    <p>{{ row[3] }}</p>
+                    <h6>{{ row[2] }}</h6>
+                    <a href="" class="btn btn-danger">Buy now</a>
+                </div>
+            </div>
+
+    </div>
+        {% endfor %}
+
+</div>
+{%include "footer.html"%}

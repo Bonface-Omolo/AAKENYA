@@ -1,0 +1,44 @@
+{% include "header.html" %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center" >Fill in the Form Below</h3>
+                </div>
+                <div class="card-body">
+                    <p style="color:red">{{ msg }}</p>
+                    <form action="/add-users-to-db" method="POST">
+                          <input type="number" name="id" placeholder="Enter your id number"class="form-control"> <br>
+                        <input type="text" name="fname" placeholder="Your First Name" class="form-control"><br>
+                        <input type="text" name="lname" placeholder="Your Last Name"class="form-control"><br>
+                        <input type="email" name="email" placeholder="Your Email Address"class="form-control"><br>
+                        <input type="password" name="password" placeholder="Enter a Password"class="form-control"><br>
+                        <input type="submit" value="Register" class="btn btn-primary" >
+                        <p>Already Registered, <a href="/login">Login </a> instead</p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-2">
+
+        </div>
+<!--        <div class="col-md-6">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    <h3>Alternatively</h3>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <p>Already Registered, <a href="/login">Login </a> instead</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>
+
+{% include "footer.html" %}
